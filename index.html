@@ -128,12 +128,12 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
       <button onClick="{{ close }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(18px,1.7vw,34px) 'Nunito';padding:clamp(12px,1.3vw,24px) clamp(22px,2.2vw,42px);border-radius:999px;display:flex;align-items:center;gap:10px;min-height:48px;line-height:1"><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M15 5l-7 7 7 7"></path></svg><span style="display:block">BACK</span></button>
       <img src="./images/logo.png" alt="Breidy Naturals" style="height:clamp(52px,6vw,110px);width:auto">
     </div>
-    <div style="display:flex;align-items:center;gap:clamp(14px,2vw,32px);justify-content:center;padding:0 16px;margin-top:clamp(-8px,-0.6vw,0px);flex:none">
+    <div style="display:flex;align-items:center;gap:clamp(14px,2vw,32px);justify-content:center;padding:clamp(10px,1.2vw,20px) 16px 0;flex:none">
       <button onClick="{{ prevItem }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(15px,1.3vw,24px) 'Nunito';padding:clamp(10px,1.1vw,20px) clamp(16px,1.8vw,32px);border-radius:999px;display:flex;align-items:center;gap:8px;min-height:44px;line-height:1;white-space:nowrap;opacity:{{ prevOpacity }}"><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M15 5l-7 7 7 7"></path></svg><span style="display:block">PREVIOUS ITEM</span></button>
       <button onClick="{{ nextItem }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(15px,1.3vw,24px) 'Nunito';padding:clamp(10px,1.1vw,20px) clamp(16px,1.8vw,32px);border-radius:999px;display:flex;align-items:center;gap:8px;min-height:44px;line-height:1;white-space:nowrap;opacity:{{ nextOpacity }}"><span style="display:block">NEXT ITEM</span><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M9 5l7 7-7 7"></path></svg></button>
     </div>
-    <div style="flex:1;display:grid;grid-template-columns:{{ detailCols }};gap:clamp(24px,3.5vw,64px);padding:clamp(8px,1vw,14px) clamp(16px,5vw,96px) clamp(24px,3vw,48px);align-items:{{ detailAlign }};max-width:1700px;width:100%;margin:0 auto">
-      <div style="display:flex;flex-direction:column;gap:14px;align-items:center;width:100%;position:sticky;top:0">
+    <div style="flex:1;display:grid;grid-template-columns:{{ detailCols }};gap:clamp(24px,3.5vw,64px);padding:clamp(20px,2.5vw,40px) clamp(16px,5vw,96px) clamp(24px,3vw,48px);align-items:center;max-width:1700px;width:100%;margin:0 auto">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:center;width:100%">
       <div style="position:relative;width:100%;max-width:{{ detailImgMax }};aspect-ratio:4/3;border-radius:clamp(20px,2vw,40px);overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(29,36,64,.16)"><img src="{{ sel.img }}" alt="{{ sel.name }}" style="width:100%;height:100%;object-fit:{{ sel.fit }};display:block;transform:translateX({{ sel.shift }}) scale({{ sel.zoom }})">
       </div>
       </div>
@@ -355,7 +355,7 @@ class Component extends DCLogic {
       menuTitle: screen === 'market' ? 'Market menu' : 'Restaurant menu',
       goRestaurantV1: () => this.go('restaurant'), goMarket: () => this.go('market'), goHome: () => this.go('home'),
       wide, narrow, menuDir: wide ? 'row' : 'column',
-      detailAlign: wide ? 'start' : 'center', detailImgMax: wide ? 'min(100%, calc(100vh - 380px) * 4 / 3)' : '100%',
+      detailImgMax: wide ? 'min(100%, calc(100vh - 380px) * 4 / 3)' : '100%',
       circleSize: wide ? 'clamp(120px,min(18vw,24vh),240px)' : 'clamp(88px,min(30vw,15vh),140px)', homeBtnGap: wide ? 'clamp(36px,7vw,120px)' : 'clamp(14px,3vh,28px) 40px', homeLblGap: wide ? 'clamp(14px,2vw,26px)' : '8px',
       heroH: wide ? 'clamp(240px,46vh,620px)' : 'min(46vh, 56vw)', heroW: wide ? 'auto' : '122%', heroImgH: wide ? '190%' : 'auto',
       navOpen, navClosed: !navOpen, navW: navOpen ? '300px' : '130px', navFont: navOpen ? '20px' : '14px', navHeadJustify: navOpen ? 'space-between' : 'center', navAlign: navOpen ? 'left' : 'center', navBtnJustify: navOpen ? 'space-between' : 'center', navWrap: navOpen ? 'normal' : 'nowrap',
