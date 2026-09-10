@@ -39,7 +39,7 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
     <img src="./images/logo.png" alt="Breidy Naturals" style="width:86%;height:86%;object-fit:contain;display:block">
   </div>
   </sc-if>
-  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(28px,4vw,52px);padding:{{ homePadTop }} 24px 16px;text-align:center">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:{{ homeJustify }};gap:clamp(28px,4vw,52px);padding:{{ homePadTop }} 24px 16px;text-align:center">
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:{{ homeBtnGap }}">
       <button onClick="{{ goRestaurantV1 }}" style="border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:{{ homeLblGap }};padding:0">
         <div style="width:{{ circleSize }};height:{{ circleSize }};border-radius:50%;background:#2b4a9e;border:6px solid #fff;box-shadow:0 12px 36px rgba(43,74,158,.32);display:flex;align-items:center;justify-content:center"><svg width="48%" height="48%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ restIcon.a }}"></path><path d="{{ restIcon.b }}"></path><path d="{{ restIcon.c }}"></path><path d="{{ restIcon.d }}"></path><path d="{{ restIcon.e }}"></path><path d="{{ restIcon.f }}"></path></svg></div>
@@ -124,15 +124,15 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
 
   <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
   <div data-screen-label="Item detail" onTouchStart="{{ swipeStart }}" onTouchEnd="{{ swipeEnd }}" style="position:fixed;inset:0;z-index:20;background:#fff;display:flex;flex-direction:column;overflow-y:auto">
-    <div style="padding:clamp(12px,1.4vw,24px) clamp(16px,3vw,56px) 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none">
+    <div style="padding:clamp(12px,1.4vw,24px) clamp(16px,3vw,56px) 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none">
       <button onClick="{{ close }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(18px,1.7vw,34px) 'Nunito';padding:clamp(12px,1.3vw,24px) clamp(22px,2.2vw,42px);border-radius:999px;display:flex;align-items:center;gap:10px;min-height:48px;line-height:1"><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M15 5l-7 7 7 7"></path></svg><span style="display:block">BACK</span></button>
       <img src="./images/logo.png" alt="Breidy Naturals" style="height:clamp(52px,7.5vw,144px);width:auto;margin:calc((clamp(52px,6vw,110px) - clamp(52px,7.5vw,144px)) / 2) 0">
     </div>
-    <div style="display:flex;align-items:center;gap:clamp(14px,2vw,32px);justify-content:center;padding:clamp(10px,1.2vw,20px) 16px 0;flex:none">
+    <div style="display:flex;align-items:center;gap:clamp(14px,2vw,32px);justify-content:center;padding:clamp(16px,1.2vw,20px) 16px 0;flex:none">
       <button onClick="{{ prevItem }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(15px,1.3vw,24px) 'Nunito';padding:clamp(10px,1.1vw,20px) clamp(16px,1.8vw,32px);border-radius:999px;display:flex;align-items:center;gap:8px;min-height:44px;line-height:1;white-space:nowrap;opacity:{{ prevOpacity }}"><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M15 5l-7 7 7 7"></path></svg><span style="display:block">PREVIOUS ITEM</span></button>
       <button onClick="{{ nextItem }}" style="border:0;cursor:pointer;background:#eef1fa;color:#2b4a9e;font:700 clamp(15px,1.3vw,24px) 'Nunito';padding:clamp(10px,1.1vw,20px) clamp(16px,1.8vw,32px);border-radius:999px;display:flex;align-items:center;gap:8px;min-height:44px;line-height:1;white-space:nowrap;opacity:{{ nextOpacity }}"><span style="display:block">NEXT ITEM</span><svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M9 5l7 7-7 7"></path></svg></button>
     </div>
-    <div style="flex:1;display:grid;grid-template-columns:{{ detailCols }};gap:clamp(24px,3.5vw,64px);padding:clamp(20px,2.5vw,40px) clamp(16px,5vw,96px) clamp(24px,3vw,48px);align-items:center;max-width:1700px;width:100%;margin:0 auto">
+    <div style="flex:1;display:grid;grid-template-columns:{{ detailCols }};gap:clamp(24px,3.5vw,64px);padding:clamp(24px,2.5vw,40px) clamp(16px,5vw,96px) clamp(24px,3vw,48px);align-items:center;max-width:1700px;width:100%;margin:0 auto">
       <div style="display:flex;flex-direction:column;gap:14px;align-items:center;width:100%">
       <div style="position:relative;width:100%;max-width:{{ detailImgMax }};aspect-ratio:4/3;border-radius:clamp(20px,2vw,40px);overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(29,36,64,.16)"><img src="{{ sel.img }}" alt="{{ sel.name }}" style="width:100%;height:100%;object-fit:{{ sel.fit }};display:block;transform:translateX({{ sel.shift }}) scale({{ sel.zoom }})">
       </div>
@@ -351,7 +351,7 @@ class Component extends DCLogic {
     return {
       isHome: screen === 'home', isMenu: screen !== 'home',
       restIcon: this.icon(this.props.restaurantIcon, 'sandwich'), mktIcon: this.icon(this.props.marketIcon, 'milk bottle'),
-      showIcon: tile === 'icon', showLogo: tile === 'logo', homePadTop: tile === 'none' ? '16px' : 'calc(clamp(55px,8vw,100px) + 16px)', homeJustify: tile === 'none' ? 'flex-start' : 'center', welcomeSize: tile === 'none' ? 'clamp(38px,5vw,68px)' : 'clamp(30px,3.8vw,48px)',
+      showIcon: tile === 'icon', showLogo: tile === 'logo', homePadTop: tile === 'none' ? (wide ? '16px' : '12px') : 'calc(clamp(55px,8vw,100px) + 16px)', homeJustify: (tile === 'none' && !wide) ? 'flex-start' : 'center', welcomeSize: tile === 'none' ? 'clamp(38px,5vw,68px)' : 'clamp(30px,3.8vw,48px)',
       menuTitle: screen === 'market' ? 'Market menu' : 'Restaurant menu',
       goRestaurantV1: () => this.go('restaurant'), goMarket: () => this.go('market'), goHome: () => this.go('home'),
       wide, narrow, menuDir: wide ? 'row' : 'column',
