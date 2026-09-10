@@ -356,7 +356,7 @@ class Component extends DCLogic {
       goRestaurantV1: () => this.go('restaurant'), goMarket: () => this.go('market'), goHome: () => this.go('home'),
       wide, narrow, menuDir: wide ? 'row' : 'column',
       detailImgMax: wide ? 'min(100%, calc(100vh - 380px) * 4 / 3)' : '100%',
-      circleSize: wide ? 'clamp(120px,min(18vw,24vh),240px)' : 'clamp(88px,min(30vw,15vh),140px)', homeBtnGap: wide ? 'clamp(36px,7vw,120px)' : 'clamp(14px,3vh,28px) 40px', homeLblGap: wide ? 'clamp(14px,2vw,26px)' : '8px',
+      circleSize: wide ? 'clamp(120px,min(18vw,24vh),240px)' : 'clamp(88px,min(30vw,15vh),140px)', homeBtnGap: wide ? 'clamp(36px,7vw,120px)' : 'clamp(14px,3vh,28px) 40px', homeLblGap: wide ? 'clamp(14px,2vw,26px)' : '20px',
       heroH: wide ? 'clamp(240px,46vh,620px)' : 'min(46vh, 56vw)', heroW: wide ? 'auto' : '122%', heroImgH: wide ? '190%' : 'auto',
       navOpen, navClosed: !navOpen, navW: navOpen ? '300px' : '130px', navFont: navOpen ? '20px' : '14px', navHeadJustify: navOpen ? 'space-between' : 'center', navAlign: navOpen ? 'left' : 'center', navBtnJustify: navOpen ? 'space-between' : 'center', navWrap: navOpen ? 'normal' : 'nowrap',
       toggleNav: () => this.setState(st => ({ navOpen: !st.navOpen })),
