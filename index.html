@@ -177,12 +177,12 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
         </sc-if>
         <sc-if value="{{ sel.hasExtras }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
-          <div style="font:700 clamp(13px,1.3vw,20px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Add Ingredients</div>
+          <div style="font:700 clamp(13px,1.45vw,22px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Add Ingredients</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
             <sc-for list="{{ sel.extras }}" as="b" hint-placeholder-count="0">
               <div style="display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:96px;background:#f7f5f0;border:1.5px solid #e6e3da;border-radius:14px;padding:14px 16px">
-                <span style="font:600 clamp(17px,1.75vw,27px) 'Nunito';color:#1d2440">{{ b.name }}</span>
-                <span style="font:700 clamp(15px,1.5vw,23px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
+                <span style="font:600 clamp(17px,1.7vw,28px) 'Nunito';color:#1d2440">{{ b.name }}</span>
+                <span style="font:700 clamp(15px,1.55vw,25px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
               </div>
             </sc-for>
           </div>
