@@ -138,16 +138,16 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
       </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vw,20px)">
-        <div style="font:700 clamp(14px,1.1vw,20px) 'Nunito';letter-spacing:.14em;text-transform:uppercase;color:#8a90a8">{{ sel.category }}</div>
+        <div style="font:700 clamp(14px,1.3vw,22px) 'Nunito';letter-spacing:.14em;text-transform:uppercase;color:#8a90a8">{{ sel.category }}</div>
         <h1 style="margin:0;font:800 clamp(30px,3.2vw,56px)/1.05 'Baloo 2';letter-spacing:-.01em;color:#2b4a9e;text-wrap:pretty">{{ sel.name }}</h1>
         <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-          <div style="font:700 clamp(24px,2.2vw,40px) 'Nunito';color:#2b4a9e">{{ sel.price }}</div>
-          <div style="font:600 clamp(21px,1.7vw,30px) 'Nunito';color:#8a90a8">{{ sel.lbp }}</div>
+          <div style="font:700 clamp(24px,2.5vw,42px) 'Nunito';color:#2b4a9e">{{ sel.price }}</div>
+          <div style="font:600 clamp(21px,1.9vw,32px) 'Nunito';color:#8a90a8">{{ sel.lbp }}</div>
         </div>
-        <div style="font:400 clamp(18px,1.4vw,26px)/1.45 'Nunito';color:#5d6483;text-wrap:pretty">{{ sel.desc }}</div>
+        <div style="font:400 clamp(18px,1.85vw,30px)/1.45 'Nunito';color:#5d6483;text-wrap:pretty">{{ sel.desc }}</div>
         <sc-if value="{{ sel.hasTags }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <sc-for list="{{ sel.tags }}" as="t" hint-placeholder-count="0"><span style="font:700 13px 'Nunito';letter-spacing:.1em;text-transform:uppercase;color:{{ t.fg }};background:{{ t.bg }};padding:8px 14px;border-radius:10px"><sc-if value="{{ t.spicy }}" hint-placeholder-val="{{ false }}"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M14 4c1 2 4 3 4 8 0 5-4 9-9 9-3 0-5-1-6-2 4 0 8-3 9-8 .4-2.5 1.3-5 2-7z"></path><path d="M14 4c1-1.5 3-2 5-1"></path></svg></sc-if>{{ t.name }}</span></sc-for>
+          <sc-for list="{{ sel.tags }}" as="t" hint-placeholder-count="0"><span style="font:700 clamp(13px,1.1vw,17px) 'Nunito';letter-spacing:.1em;text-transform:uppercase;color:{{ t.fg }};background:{{ t.bg }};padding:8px 14px;border-radius:10px"><sc-if value="{{ t.spicy }}" hint-placeholder-val="{{ false }}"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M14 4c1 2 4 3 4 8 0 5-4 9-9 9-3 0-5-1-6-2 4 0 8-3 9-8 .4-2.5 1.3-5 2-7z"></path><path d="M14 4c1-1.5 3-2 5-1"></path></svg></sc-if>{{ t.name }}</span></sc-for>
         </div>
         </sc-if>
         <sc-if value="{{ sel.hasNutrition }}" hint-placeholder-val="{{ false }}">
@@ -164,12 +164,12 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
         </sc-if>
         <sc-if value="{{ sel.hasBreads }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
-          <div style="font:700 clamp(13px,1vw,18px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">{{ sel.breadTitle }}</div>
+          <div style="font:700 clamp(13px,1.3vw,20px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">{{ sel.breadTitle }}</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px">
             <sc-for list="{{ sel.breads }}" as="b" hint-placeholder-count="0">
               <div style="display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-height:74px;background:#f7f5f0;border:1.5px solid #e6e3da;border-radius:12px;padding:10px 12px">
-                <span style="font:600 clamp(14px,1.05vw,19px)/1.2 'Nunito';color:#1d2440;text-wrap:balance">{{ b.name }}</span>
-                <span style="font:700 clamp(13px,.95vw,17px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
+                <span style="font:600 clamp(14px,1.4vw,22px)/1.2 'Nunito';color:#1d2440;text-wrap:balance">{{ b.name }}</span>
+                <span style="font:700 clamp(13px,1.25vw,19px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
               </div>
             </sc-for>
           </div>
@@ -177,12 +177,12 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
         </sc-if>
         <sc-if value="{{ sel.hasExtras }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
-          <div style="font:700 clamp(13px,1vw,18px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Add Ingredients</div>
+          <div style="font:700 clamp(13px,1.3vw,20px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Add Ingredients</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
             <sc-for list="{{ sel.extras }}" as="b" hint-placeholder-count="0">
               <div style="display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:96px;background:#f7f5f0;border:1.5px solid #e6e3da;border-radius:14px;padding:14px 16px">
-                <span style="font:600 clamp(17px,1.4vw,25px) 'Nunito';color:#1d2440">{{ b.name }}</span>
-                <span style="font:700 clamp(15px,1.2vw,21px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
+                <span style="font:600 clamp(17px,1.75vw,27px) 'Nunito';color:#1d2440">{{ b.name }}</span>
+                <span style="font:700 clamp(15px,1.5vw,23px) 'Nunito';color:{{ b.color }}">{{ b.extra }}</span>
               </div>
             </sc-for>
           </div>
