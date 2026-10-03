@@ -215,7 +215,7 @@ class Component extends DCLogic {
   state = { screen: 'home', layout: 'compact', active: 'All', navOpen: false, selected: null, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
   data = [
     { name: 'Sourdough Sandwich Of The Month', items: [
-      { img: './images/sotm.jpg', zoom: 1.55, shift: '6%', name: 'Goat Labneh Bruschetta', desc: 'Goat Labneh, Cherry Tomato, Basil, Black Pepper, Onions & Thyme served in our signature sourdough bread', price: '$10', tag: '', kcal: 550, protein: 16 } ] },
+      { img: './images/sotm-brisket.jpg', zoom: 1.7, name: 'Cheesy Brisket', desc: 'Smoked Beef Brisket, Cow Kashkawan Cheese, Pickled Cabbage, Pickles, Mayo, Mesclun, Dijon & Apple BBQ Glaze Sauce Served In Ciabatta Bread', price: '$13.33', tag: '', breads: [['Ciabatta Cereale', '+200,000 LBP'], ['Baguette', 'No Price Change'], ['Baguette Cereale', 'No Price Change']] } ] },
     { name: 'High Protein Bowls', items: [
       { img: './images/b10.jpg', zoom: 1, name: 'Standard Bowl', desc: 'High Protein Arishi Cow Cheese (200G) & Honey served in a Bowl', price: '$5', tag: '', kcal: 357, protein: 22.5, sections: [
         { title: 'Add Ingredients', rows: [['Extra Honey, Strawberry, Banana, Kiwi And/Or Mango', '+50,000 LBP each'], ['Raspberry, Blueberry And/Or Blackberry', '+100,000 LBP each']] }
