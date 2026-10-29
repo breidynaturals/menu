@@ -214,7 +214,7 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
 class Component extends DCLogic {
   state = { screen: 'home', layout: 'compact', active: 'All', navOpen: false, selected: null, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
   data = [
-    { name: 'Sourdough Sandwich Of The Month', items: [
+    { name: 'Sandwich Of The Month', items: [
       { img: './images/sotm-brisket.jpg', zoom: 1.7, name: 'Cheesy Brisket', desc: 'Smoked Beef Brisket, Cow Kashkawan Cheese, Pickled Cabbage, Pickles, Mayo, Mesclun, Dijon & Apple BBQ Glaze Sauce Served In Ciabatta Bread', price: '$13.33', tag: '', breads: [['Ciabatta Cereale', '+200,000 LBP'], ['Baguette', 'No Price Change'], ['Baguette Cereale', 'No Price Change']] } ] },
     { name: 'High Protein Bowls', items: [
       { img: './images/b10.jpg', zoom: 1, name: 'Standard Bowl', desc: 'High Protein Arishi Cow Cheese (200G) & Honey served in a Bowl', price: '$5', tag: '', kcal: 357, protein: 22.5, sections: [
@@ -378,7 +378,7 @@ class Component extends DCLogic {
   icon(name, fallback) { const p = this.icons[name] || this.icons[fallback]; const k = ['a','b','c','d','e','f']; const o = {}; k.forEach((key, i) => o[key] = p[i] || ''); return o; }
   lbp(price) { const usd = parseFloat(String(price).replace(/[^0-9.]/g, '')); return isNaN(usd) ? '' : (Math.round(usd * (this.props.lbpRate ?? this.rate) / 5000) * 5000).toLocaleString('en-US') + ' LBP'; }
   tags(str) { return (str || '').split(',').map(t => t.trim()).filter(Boolean).map(name => name === 'New' ? { name, fg: '#2e7d4f', bg: '#e4f3ea', spicy: false } : name === 'Spicy' ? { name, fg: '#b3261e', bg: '#fdeae7', spicy: true } : name === 'Popular' ? { name, fg: '#7a4b00', bg: '#fff1cc', spicy: false } : name === 'Chef Favorite' ? { name, fg: '#6b2d8b', bg: '#f1e6f7', spicy: false } : name === 'High Protein' ? { name, fg: '#0f5f6b', bg: '#dff3f5', spicy: false } : { name, fg: '#2e7d4f', bg: '#e4f3ea', spicy: false }); }
-  short = { All: 'ALL', 'Sourdough Sandwich Of The Month': 'SOTM', 'Ciabatta Sandwiches': 'CIABATTA', 'High Protein Bowls': 'BOWLS', 'Sajj Sandwiches': 'SAJJ', Salads: 'SALADS', 'Healthy Greek Yogurt': 'YOGURT', Sweets: 'SWEETS', Beverages: 'DRINKS', 'Dairy Products Cow': 'COW', 'Dairy Products Goat': 'GOAT', 'Dairy Products Sheep': 'SHEEP', 'Fresh Dips': 'DIPS', 'Pantry Essentials': 'MOUNEH', 'Sweet Spreads': 'SPREADS' };
+  short = { All: 'ALL', 'Sandwich Of The Month': 'SOTM', 'Ciabatta Sandwiches': 'CIABATTA', 'High Protein Bowls': 'BOWLS', 'Sajj Sandwiches': 'SAJJ', Salads: 'SALADS', 'Healthy Greek Yogurt': 'YOGURT', Sweets: 'SWEETS', Beverages: 'DRINKS', 'Dairy Products Cow': 'COW', 'Dairy Products Goat': 'GOAT', 'Dairy Products Sheep': 'SHEEP', 'Fresh Dips': 'DIPS', 'Pantry Essentials': 'MOUNEH', 'Sweet Spreads': 'SPREADS' };
   src() { return this.state.screen === 'market' ? this.marketData : this.data; }
   componentDidMount() {
     this.onResize = () => this.setState({ w: window.innerWidth });
