@@ -158,7 +158,7 @@ a{color:#2b4a9e}a:hover{color:#1d3578}
             <span style="font:700 clamp(18px,1.5vw,27px) 'Nunito';color:#1d2440">{{ sel.kcal }} kcal</span>
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;background:#f7f5f0;border:1.5px solid #e6e3da;border-radius:14px;padding:12px 18px;min-width:130px">
-            <span style="font:700 clamp(11px,.85vw,14px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Protein</span>
+            <span style="font:700 clamp(11px,.85vw,14px) 'Nunito';letter-spacing:.12em;text-transform:uppercase;color:#8a90a8">Proteins</span>
             <span style="font:700 clamp(18px,1.5vw,27px) 'Nunito';color:#1d2440">{{ sel.protein }} g</span>
           </div>
         </div>
@@ -215,7 +215,7 @@ class Component extends DCLogic {
   state = { screen: 'home', layout: 'compact', active: 'All', navOpen: false, selected: null, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
   data = [
     { name: 'Sandwich Of The Month', items: [
-      { img: './images/sotm-brisket.jpg', zoom: 1.7, name: 'Cheesy Brisket', desc: 'Smoked Beef Brisket, Cow Kashkawan Cheese, Pickled Cabbage, Pickles, Mayo, Mesclun, Dijon & Apple BBQ Glaze Sauce Served In Ciabatta Bread', price: '$13.33', tag: '', breads: [['Ciabatta Cereale', '+200,000 LBP'], ['Baguette', 'No Price Change'], ['Baguette Cereale', 'No Price Change']] } ] },
+      { img: './images/sotm-grecko.jpg', zoom: 1, name: 'Grecko Chicken', desc: 'Pulled Chicken Mix, Yogurt Tzatziki Sauce, Pickled Cabbage, Mesclun & Lemon Mustard Sauce served in Kaake Bread', price: '$10.56', tag: '', kcal: 580, protein: 38, showNutrition: true, breadFrom: 'Kaake', breads: [['Baguette', 'No Price Change'], ['Ciabatta', '+100,000 LBP'], ['Ciabatta Cereale', '+200,000 LBP']], sections: [{ title: 'Add Ingredients', rows: [['Kashkawan Cow Cheese', '+150,000 LBP']] }] } ] },
     { name: 'High Protein Bowls', items: [
       { img: './images/b10.jpg', zoom: 1, name: 'Standard Bowl', desc: 'High Protein Arishi Cow Cheese (200G) & Honey served in a Bowl', price: '$5', tag: '', kcal: 357, protein: 22.5, sections: [
         { title: 'Add Ingredients', rows: [['Extra Honey, Strawberry, Banana, Kiwi And/Or Mango', '+50,000 LBP each'], ['Raspberry, Blueberry And/Or Blackberry', '+100,000 LBP each']] }
@@ -426,7 +426,7 @@ class Component extends DCLogic {
     }));
     const raw = this.state.selected;
     const flat = this.flat(), pos = raw ? flat.findIndex(it => it.name === raw.name && it.category === raw.category) : -1;
-    const sel = raw ? { ...raw, size: raw.size || '', zoom: raw.zoom || 1, shift: raw.shift || '0', fit: raw.fit || 'cover', tags: this.tags(raw.tag), hasTags: this.tags(raw.tag).length > 0, lbp: this.lbp(raw.price), hasBreads: !!(raw.breads && raw.breads.length), hasNutrition: false && (raw.kcal != null || raw.protein != null), hasExtras: !!(raw.extras && raw.extras.length), sections: (raw.sections || []).map(sec => ({ title: sec.title, rows: sec.rows.map(([text, price]) => ({ text, price, color: price === 'Free' ? '#2e7d4f' : '#2b4a9e' })) })), extras: (raw.extras || []).map(([name, extra]) => ({ name, extra, color: '#2b4a9e' })), breadTitle: 'Replace ' + (raw.breadFrom || (raw.category === 'Sajj Sandwiches' ? 'Sajj' : 'Ciabatta')) + ' Bread with', breads: (raw.breads || []).map(([name, extra]) => ({ name, extra, color: extra === 'No Price Change' ? '#2e7d4f' : '#2b4a9e' })) } : { tags: [], breads: [], extras: [], sections: [] };
+    const sel = raw ? { ...raw, size: raw.size || '', zoom: raw.zoom || 1, shift: raw.shift || '0', fit: raw.fit || 'cover', tags: this.tags(raw.tag), hasTags: this.tags(raw.tag).length > 0, lbp: this.lbp(raw.price), hasBreads: !!(raw.breads && raw.breads.length), hasNutrition: !!raw.showNutrition && (raw.kcal != null || raw.protein != null), hasExtras: !!(raw.extras && raw.extras.length), sections: (raw.sections || []).map(sec => ({ title: sec.title, rows: sec.rows.map(([text, price]) => ({ text, price, color: price === 'Free' ? '#2e7d4f' : '#2b4a9e' })) })), extras: (raw.extras || []).map(([name, extra]) => ({ name, extra, color: '#2b4a9e' })), breadTitle: 'Replace ' + (raw.breadFrom || (raw.category === 'Sajj Sandwiches' ? 'Sajj' : 'Ciabatta')) + ' Bread with', breads: (raw.breads || []).map(([name, extra]) => ({ name, extra, color: extra === 'No Price Change' ? '#2e7d4f' : '#2b4a9e' })) } : { tags: [], breads: [], extras: [], sections: [] };
     return {
       isHome: screen === 'home', isMenu: screen !== 'home',
       restIcon: this.icon(this.props.restaurantIcon, 'sandwich'), mktIcon: this.icon(this.props.marketIcon, 'milk bottle'),
